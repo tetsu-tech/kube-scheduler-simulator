@@ -88,6 +88,7 @@ func (s *Service) StartScheduler(versionedcfg *v1beta2config.KubeSchedulerConfig
 	sched, err := scheduler.New(
 		clientSet,
 		informerFactory,
+		nil,
 		profile.NewRecorderFactory(evtBroadcaster),
 		ctx.Done(),
 		scheduler.WithKubeConfig(restConfig),
